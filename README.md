@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Wikipedia Automation Framework
 
 Этот проект представляет собой легковесный фреймворк для автоматизации тестирования на языке C# с использованием Microsoft Playwright. Целью тестирования является страница Википедии о [Playwright](https://en.wikipedia.org/wiki/Playwright_(software)).
@@ -66,3 +67,7 @@ dotnet test
 - **Microsoft Playwright** – автоматизация браузера
 - **ExtentReports 5** – отчетность
 - **Newtonsoft.Json** – работа с JSON API
+=======
+# WikipediaAutomation
+Wikipedia Automation Playwright Test Cases
+>>>>>>> 51cbea57cc4c9b949ac3b429f08ca58a0aafd7b9
