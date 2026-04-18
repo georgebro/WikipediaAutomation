@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <TestRunParameters>
+    <!-- Set to true to run in headed mode for debugging -->
+    <Parameter name="headless" value="true" />
+    <Parameter name="browser" value="chromium" />
+    <Parameter name="slowMo" value="0" />
+  </TestRunParameters>
+  <NUnit>
+    <NumberOfTestWorkers>1</NumberOfTestWorkers>
+  </NUnit>
+</RunSettings>

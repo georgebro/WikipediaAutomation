@@ -1,0 +1,7 @@
+bin/
+obj/
+*.user
+.vs/
+Reports/
+TestResults/
+*.DotSettings.user
