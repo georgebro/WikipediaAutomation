@@ -1,73 +1,68 @@
-<<<<<<< HEAD
 # Wikipedia Automation Framework
 
-Этот проект представляет собой легковесный фреймворк для автоматизации тестирования на языке C# с использованием Microsoft Playwright. Целью тестирования является страница Википедии о [Playwright](https://en.wikipedia.org/wiki/Playwright_(software)).
+A lightweight test automation framework built with C# and Microsoft Playwright, targeting the [Playwright (software)](https://en.wikipedia.org/wiki/Playwright_(software)) Wikipedia article.
 
-## Описание проекта
+## Project Overview
 
-Фреймворк построен по классической архитектуре **Page Object Model (POM)** и предназначен для выполнения трех основных задач (кейсов):
-1. **Сравнение количества слов:** Автоматическое сравнение уникальных слов в секции "Debugging features", полученных через пользовательский интерфейс (UI) и через MediaWiki API.
-2. **Проверка ссылок:** Валидация того, что все технологии в навигационном блоке "Microsoft development tools" являются кликабельными ссылками.
-3. **Темный режим:** Проверка корректности переключения сайта в темную тему оформления через настройки внешнего вида Википедии.
+The framework follows the **Page Object Model (POM)** pattern and covers three main automation tasks:
+1. **Word Count Comparison:** Compares unique word counts in the "Debugging features" section extracted via UI vs. MediaWiki API.
+2. **Link Validation:** Validates that all items under the "Microsoft development tools" section are clickable hyperlinks.
+3. **Dark Mode Verification:** Automates switching the site to "Dark" mode and verifies the visual change.
 
-## Архитектура
+## Architecture
 
 ```
 WikipediaAutomation/
 ├── Pages/
-│   ├── BasePage.cs                   # Базовый класс для навигации
-│   └── WikipediaPlaywrightPage.cs    # Page Object для статьи Википедии (локаторы и действия)
+│   ├── BasePage.cs                   # Navigation base class
+│   └── WikipediaPlaywrightPage.cs    # POM for the Wikipedia article (locators & actions)
 ├── Helpers/
-│   ├── TextNormalizer.cs             # Нормализация текста и подсчет уникальных слов
-│   ├── WikipediaApiClient.cs         # Клиент для работы с MediaWiki API
-│   └── ReportManager.cs              # Настройка HTML-отчетов ExtentReports
+│   ├── TextNormalizer.cs             # Text processing & unique word counting
+│   ├── WikipediaApiClient.cs         # MediaWiki Parse API client
+│   └── ReportManager.cs              # ExtentReports HTML reporting setup
 ├── Tests/
-│   ├── BaseTest.cs                   # Базовый класс тестов (Setup/Teardown, скриншоты при ошибках)
+│   ├── BaseTest.cs                   # Test base (Setup/Teardown, screenshots on failure)
 │   ├── Task1_WordCountComparisonTest.cs
 │   ├── Task2_MicrosoftDevToolsLinksTest.cs
 │   └── Task3_DarkModeTest.cs
-└── WikipediaAutomation.csproj        # Файл проекта с зависимостями
+└── WikipediaAutomation.csproj        # Project file with dependencies
 ```
 
-## Основные возможности
-- **ExtentReports 5:** Генерация наглядных HTML-отчетов с результатами тестов.
-- **Скриншоты:** Автоматическое создание скриншотов при падении тестов.
-- **Кросс-браузерность:** Поддержка Chromium, Firefox и WebKit (по умолчанию используется Chromium).
-- **MediaWiki API:** Прямое взаимодействие с API Википедии для верификации данных.
+## Key Features
+- **ExtentReports 5:** Generates comprehensive HTML reports.
+- **Auto-Screenshots:** Automatically captures screenshots on test failures.
+- **Cross-Browser:** Supports Chromium, Firefox, and WebKit (Chromium used by default).
+- **API Integration:** Direct interaction with MediaWiki API for data verification.
 
 ---
 
-## Как запустить тесты
+## How to Run the Tests
 
-### 1. Подготовка окружения
-Убедитесь, что у вас установлен .NET SDK 8.0 или выше.
+### 1. Prerequisites
+Ensure you have the .NET SDK 8.0 or newer installed.
 ```powershell
 dotnet restore
 dotnet build
 ```
 
-### 2. Установка браузеров Playwright
+### 2. Install Playwright Browsers
 ```powershell
 dotnet playwright install
 ```
 
-### 3. Запуск тестов
+### 3. Execute Tests
 ```powershell
 dotnet test
 ```
 
-Результаты тестов и отчет будут доступны в папке:
+Test results and reports are generated at:
 `bin/Debug/net8.0/Reports/TestReport.html`
 
 ---
 
-## Стек технологий
+## Tech Stack
 - **C# / .NET 8**
-- **NUnit 3** – тестовый движок
-- **Microsoft Playwright** – автоматизация браузера
-- **ExtentReports 5** – отчетность
-- **Newtonsoft.Json** – работа с JSON API
-=======
-# WikipediaAutomation
-Wikipedia Automation Playwright Test Cases
->>>>>>> 51cbea57cc4c9b949ac3b429f08ca58a0aafd7b9
+- **NUnit 3** – Test Engine
+- **Microsoft Playwright** – Browser Automation
+- **ExtentReports 5** – Reporting
+- **Newtonsoft.Json** – API JSON Handling
