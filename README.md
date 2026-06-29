@@ -11,7 +11,6 @@ The framework follows the **Page Object Model (POM)** pattern and covers three m
 
 ## Architecture
 
-```
 WikipediaAutomation/
 ├── Pages/
 │   ├── BasePage.cs                   # Navigation base class
