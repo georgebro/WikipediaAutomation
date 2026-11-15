@@ -43,17 +43,14 @@ Ensure you have the .NET SDK 8.0 or newer installed.
 dotnet restore
 dotnet build
 ```
-
 ### 2. Install Playwright Browsers
 ```powershell
 dotnet playwright install
 ```
-
 ### 3. Execute Tests
 ```powershell
 dotnet test
 ```
-
 Test results and reports are generated at:
 `bin/Debug/net8.0/Reports/TestReport.html`
 
